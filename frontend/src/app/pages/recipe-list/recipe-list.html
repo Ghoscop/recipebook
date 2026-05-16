@@ -1,1 +1,73 @@
-<p>recipe-list works!</p>
+<header class="hero">
+
+  <h1>RecipeBook</h1>
+
+  <p class="subtitle">
+    Descubra sabores incríveis para qualquer ocasião
+  </p>
+
+  <p class="description">
+    Explore receitas deliciosas, rápidas e criativas
+    feitas para inspirar sua cozinha todos os dias.
+  </p>
+
+</header>
+
+<section class="recipes-section">
+
+  <h2>Receitas em destaque</h2>
+
+  <div class="recipes-container">
+
+    <button
+      class="recipe-card"
+      *ngFor="let receita of recipes"
+    >
+
+      <img
+        [src]="receita.imagemUrl"
+        [alt]="receita.nome"
+        class="recipe-image"
+      />
+
+      <div class="recipe-content">
+
+        <h3>{{ receita.nome }}</h3>
+
+        <p>
+          ⏱ {{ receita.tempoPreparo }} min
+        </p>
+
+        <p>
+          🍽 {{ receita.porcoes }} porções
+        </p>
+
+        <p class="recipe-date">
+          📅 {{ receita.dataCadastro | date:'dd/MM/yyyy' }}
+        </p>
+
+      </div>
+
+    </button>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+
+  <h3>RecipeBook</h3>
+
+  <p>
+    Projeto desenvolvido com Angular e Spring Boot.
+  </p>
+
+  <div class="footer-links">
+
+    <span>📧 contato@recipebook.com</span>
+
+    <span>📱 (62) 99999-9999</span>
+
+  </div>
+
+</footer>

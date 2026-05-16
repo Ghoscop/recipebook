@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #4b5563,
+    #5b6470,
+    #6b7280
+  );
+
+  color: white;
+}
+
+.hero {
+  text-align: center;
+
+  padding: 4rem 1rem 3rem;
+}
+
+.hero h1 {
+  font-size: 4rem;
+
+  margin-bottom: 1rem;
+
+  color: antiquewhite;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+
+  color: #f5e6d3;
+
+  margin-bottom: 1rem;
+}
+
+.description {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  opacity: 0.85;
+
+  line-height: 1.6;
+
+  color: #f3f4f6;
+}
+
+.recipes-section {
+  padding: 0 2rem 4rem;
+}
+
+.recipes-section h2 {
+  text-align: center;
+
+  font-size: 2rem;
+
+  margin-bottom: 2rem;
+
+  color: antiquewhite;
+}
+
+.recipes-container {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 1.5rem;
+}
+
+.recipe-card {
+  border: none;
+
+  background: antiquewhite;
+
+  color: #3b2f2f;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.18);
+}
+
+.recipe-image {
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+}
+
+.recipe-content {
+  padding: 1rem;
+}
+
+.recipe-content h3 {
+  margin-bottom: 0.7rem;
+
+  font-size: 1.3rem;
+}
+
+.recipe-content p {
+  margin: 0.4rem 0;
+}
+
+.footer {
+  margin-top: 4rem;
+
+  padding: 2rem;
+
+  text-align: center;
+
+  background: rgba(0,0,0,0.15);
+
+  backdrop-filter: blur(8px);
+}
+
+.footer h3 {
+  margin-bottom: 0.5rem;
+
+  color: antiquewhite;
+}
+
+.footer p {
+  opacity: 0.8;
+}
+
+.footer-links {
+  margin-top: 1rem;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 2rem;
+
+  flex-wrap: wrap;
+}
+
+.recipe-date {
+  margin-top: 0.8rem;
+
+  font-size: 0.9rem;
+
+  opacity: 0.7;
+}
