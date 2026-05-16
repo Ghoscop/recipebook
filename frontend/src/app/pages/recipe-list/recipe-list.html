@@ -13,6 +13,27 @@
 
 </header>
 
+<div class="search-container">
+
+  <input
+    type="text"
+    placeholder="🔍 Busque por receitas..."
+    [(ngModel)]="buscar"
+    (input)="filtrarReceitas()"
+    class="search-input"
+  />
+
+</div>
+
+<div class="actions">
+  <a
+    routerLink="/nova-receita"
+    class="link-button"
+  >
+    + Nova Receita
+  </a>
+</div>
+
 <section class="recipes-section">
 
   <h2>Receitas em destaque</h2>
@@ -21,7 +42,7 @@
 
     <button
       class="recipe-card"
-      *ngFor="let receita of recipes"
+      *ngFor="let receita of recipesFiltered"
     >
 
       <img
