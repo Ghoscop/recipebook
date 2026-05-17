@@ -38,7 +38,7 @@ O projeto permite cadastrar, visualizar, buscar e excluir receitas de forma prá
 
 ---
 
-# 🛠 Tecnologias Utilizadas
+# Tecnologias Utilizadas
 
 ## Frontend
 - Angular 21
@@ -57,7 +57,7 @@ O projeto permite cadastrar, visualizar, buscar e excluir receitas de forma prá
 
 ---
 
-# 🚀 Como executar o projeto
+# Como executar o projeto
 
 ## Backend
 
