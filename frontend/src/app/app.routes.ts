@@ -10,7 +10,7 @@ export const routes: Routes = [
     component: RecipeList,
   },
   {
-    path: 'nova',
+    path: 'nova-receita',
     component: RecipeForm,
   },
   {

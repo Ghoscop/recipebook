@@ -1,1 +1,120 @@
-<p>recipe-form works!</p>
+<section class="form-section">
+
+  <h1>Nova Receita</h1>
+
+  <p
+    class="success-message"
+    *ngIf="mensagemSucesso"
+  >
+    {{ mensagemSucesso }}
+  </p>
+
+  <p
+    class="error-message"
+    *ngIf="mensagemErro"
+  >
+    {{ mensagemErro }}
+  </p>
+
+  <form
+    class="recipe-form"
+    #form="ngForm"
+    (ngSubmit)="salvar()"
+  >
+
+    <label>Nome da receita</label>
+    <input
+      type="text"
+      name="nome"
+      [(ngModel)]="recipe.nome"
+      required
+      minlength="3"
+    />
+
+    <label>Categoria</label>
+    <select
+      name="categoria"
+      [(ngModel)]="recipe.categoria"
+      required
+    >
+      <option value="DOCE">Doce</option>
+      <option value="SALGADO">Salgado</option>
+      <option value="BEBIDA">Bebida</option>
+      <option value="SOBREMESA">Sobremesa</option>
+    </select>
+
+    <label>Tempo de preparo</label>
+    <input
+      type="number"
+      name="tempoPreparo"
+      [(ngModel)]="recipe.tempoPreparo"
+      required
+      min="1"
+    />
+
+    <label>Porções</label>
+    <input
+      type="number"
+      name="porcoes"
+      [(ngModel)]="recipe.porcoes"
+      required
+      min="1"
+    />
+
+    <label>Ingredientes</label>
+    <textarea
+      name="ingredientes"
+      [(ngModel)]="ingredientes"
+      required
+      placeholder="Digite um ingrediente por linha"
+    ></textarea>
+
+    <label>Modo de preparo</label>
+    <textarea
+      name="modoPreparo"
+      [(ngModel)]="modoPreparo"
+      required
+      placeholder="Digite um passo por linha"
+    ></textarea>
+
+    <label>URL da imagem</label>
+    <input
+      type="text"
+      name="imagemUrl"
+      [(ngModel)]="recipe.imagemUrl"
+    />
+
+    <div
+      class="image-preview"
+      *ngIf="recipe.imagemUrl"
+    >
+      <p>Prévia da imagem:</p>
+
+      <img
+        [src]="recipe.imagemUrl"
+        alt="Prévia da receita"
+      />
+    </div>
+
+    <div class="form-buttons">
+
+      <button
+        type="button"
+        class="back-button"
+        (click)="voltar()"
+      >
+        Voltar
+      </button>
+
+      <button
+        type="submit"
+        class="save-button"
+      >
+        Salvar Receita
+      </button>
+
+    </div>
+
+  </form>
+
+</section>

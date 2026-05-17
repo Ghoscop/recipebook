@@ -1,0 +1,156 @@
+.form-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.form-section h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: antiquewhite;
+}
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.recipe-form label {
+  color: antiquewhite;
+  font-weight: bold;
+}
+
+.recipe-form input,
+.recipe-form textarea,
+.recipe-form select {
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: antiquewhite;
+  color: #3b2f2f;
+  font-size: 1rem;
+}
+
+.recipe-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.save-button {
+  flex: 1;
+
+  border: none;
+
+  padding: 1rem;
+
+  border-radius: 12px;
+
+  background: #3b2f2f;
+
+  color: antiquewhite;
+
+  font-size: 1rem;
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.save-button:hover {
+  opacity: 0.9;
+
+  transform: translateY(-2px);
+}
+
+.back-button {
+  flex: 1;
+
+  text-align: center;
+
+  border: none;
+
+  padding: 1rem;
+
+  border-radius: 12px;
+
+  background: dimgrey;
+
+  color: antiquewhite;
+
+  font-size: 1rem;
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.back-button:hover {
+  opacity: 0.9;
+
+  transform: translateY(-2px);
+}
+
+.form-buttons {
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: 1rem;
+}
+
+.recipe-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.success-message {
+  text-align: center;
+  background: antiquewhite;
+  color: #3b2f2f;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  text-align: center;
+  background: darkred;
+  color: antiquewhite;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.image-preview {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.image-preview p {
+  color: antiquewhite;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.image-preview img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+}
+

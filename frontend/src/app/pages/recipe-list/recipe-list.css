@@ -76,7 +76,34 @@ body {
   gap: 1.5rem;
 }
 
+.delete-selected-button {
+  border: none;
+  background: #8b0000;
+  color: antiquewhite;
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delete-selected-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select-checkbox {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 2;
+}
+
 .recipe-card {
+  position: relative;
+
   border: none;
 
   background: antiquewhite;
@@ -168,4 +195,154 @@ body {
   font-size: 0.9rem;
 
   opacity: 0.7;
+}
+.search-container {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 1rem 1.2rem;
+
+  border: none;
+
+  border-radius: 14px;
+
+  font-size: 1rem;
+
+  background: antiquewhite;
+
+  color: #3b2f2f;
+
+  outline: none;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.12);
+
+  transition: 0.2s;
+}
+
+.search-input:focus {
+
+  transform: scale(1.02);
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.18);
+}
+
+.link-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  padding: 0.9rem 1.4rem;
+
+  background: antiquewhite;
+
+  color: #3b2f2f;
+
+  text-decoration: none;
+
+  border-radius: 14px;
+
+  font-weight: bold;
+
+  font-size: 1rem;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.link-button:hover {
+  transform: translateY(-3px);
+
+  background: #f5e6d3;
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.18);
+}
+
+.link-button:active {
+  transform: scale(0.98);
+}
+
+.empty-state {
+  text-align: center;
+  background: antiquewhite;
+  color: #3b2f2f;
+  padding: 1.5rem;
+  border-radius: 16px;
+  max-width: 500px;
+  margin: 2rem auto;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+
+  flex-wrap: wrap;
+}
+
+.new-recipe-button,
+.delete-selected-button {
+  border: none;
+
+  padding: 1rem 1.5rem;
+
+  border-radius: 14px;
+
+  font-size: 1rem;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.new-recipe-button {
+  background: antiquewhite;
+  color: #3b2f2f;
+}
+
+.delete-selected-button {
+  background: #8b0000;
+  color: antiquewhite;
+}
+
+.delete-selected-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.new-recipe-button:hover,
+.delete-selected-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }

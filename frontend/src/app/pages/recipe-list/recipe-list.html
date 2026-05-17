@@ -13,16 +13,66 @@
 
 </header>
 
+<div class="search-container">
+
+  <input
+    type="text"
+    placeholder="🔍 Busque por receitas..."
+    [(ngModel)]="buscar"
+    (input)="filtrarReceitas()"
+    class="search-input"
+  />
+
+</div>
+
+<div class="actions">
+
+  <a
+    routerLink="/nova-receita"
+    class="new-recipe-button"
+  >
+    + Nova Receita
+  </a>
+
+  <button
+    class="delete-selected-button"
+    type="button"
+    (click)="excluirSelecionadas()"
+    [disabled]="receitasSelecionadas.length === 0"
+  >
+    🗑 Excluir selecionadas
+  </button>
+
+</div>
+
+
 <section class="recipes-section">
 
   <h2>Receitas em destaque</h2>
 
-  <div class="recipes-container">
+  <div
+    class="empty-state"
+    *ngIf="recipesFiltered.length === 0"
+  >
+    🍳 Nenhuma receita encontrada.
+  </div>
 
+  <div
+    class="recipes-container"
+    *ngIf="recipesFiltered.length > 0"
+  >
     <button
       class="recipe-card"
-      *ngFor="let receita of recipes"
+      *ngFor="let receita of recipesFiltered"
+      (click)="abrirDetalhes(receita.id!)"
     >
+      <input
+        type="checkbox"
+        class="select-checkbox"
+        [checked]="receitasSelecionadas.includes(receita.id!)"
+        (click)="$event.stopPropagation()"
+        (change)="alternarSelecao(receita.id!)"
+      />
 
       <img
         [src]="receita.imagemUrl"

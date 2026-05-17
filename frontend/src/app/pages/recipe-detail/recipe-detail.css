@@ -1,0 +1,52 @@
+.detail-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.3rem;
+  border-radius: 12px;
+  background: #3b2f2f;
+  color: antiquewhite;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.detail-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 1.5rem;
+}
+
+.detail-card {
+  background: antiquewhite;
+  color: #3b2f2f;
+  padding: 2rem;
+  border-radius: 18px;
+}
+
+.detail-card h1 {
+  margin-bottom: 1rem;
+}
+
+.detail-card h2 {
+  margin-top: 2rem;
+}
+
+.detail-card li {
+  margin-bottom: 0.5rem;
+}
+.loading {
+  text-align: center;
+
+  color: antiquewhite;
+
+  padding: 3rem;
+
+  font-size: 1.2rem;
+}
