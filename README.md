@@ -59,7 +59,7 @@ O projeto permite cadastrar, visualizar, buscar e excluir receitas de forma prá
 
 # Como executar o projeto
 
-## Backend
+## Backend.
 
 ```bash
 cd backend
