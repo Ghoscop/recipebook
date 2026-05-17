@@ -23,7 +23,6 @@ export class RecipeList implements OnInit {
   ngOnInit(): void {
     this.recipeService.listar().subscribe((recipes) => {
       console.log('Receitas carregadas do backend:', recipes);
-
       this.recipes = recipes;
       this.recipesFiltered = recipes;
     });
@@ -35,6 +34,10 @@ export class RecipeList implements OnInit {
     this.recipesFiltered = this.recipes.filter((recipe) =>
       this.normalizarTexto(recipe.nome).includes(termo),
     );
+  }
+
+  abrirDetalhes(id: number): void {
+    window.location.href = `/receita/${id}`;
   }
 
   private normalizarTexto(valor: string): string {

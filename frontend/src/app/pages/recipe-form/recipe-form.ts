@@ -39,11 +39,66 @@ export class RecipeForm {
     window.location.href = '/';
   }
 
-  salvar() {
-    this.recipe.ingredientes = this.ingredientes
-      .split('\n')
-      .map((item) => item.trim())
-      .filter((item) => item.length > 0);
+  salvar(): void {
+
+    this.mensagemErro = '';
+    this.mensagemSucesso = '';
+
+    this.recipe.ingredientes =
+      this.ingredientes
+        .split('\n')
+        .map(item => item.trim())
+        .filter(item => item.length > 0);
+
+    this.recipe.modoPreparo =
+      this.modoPreparo
+        .split('\n')
+        .map(item => item.trim())
+        .filter(item => item.length > 0);
+
+    this.recipeService.salvar(this.recipe).subscribe({
+
+      next: () => {
+
+        this.mensagemSucesso =
+          'Receita cadastrada com sucesso!';
+
+        setTimeout(() => {
+
+          this.router.navigate(['/']);
+
+        }, 1200);
+
+      },
+
+      error: (erro) => {
+
+        console.error(erro);
+
+        if (erro.status === 400) {
+
+          this.mensagemErro =
+            'Dados inválidos. Verifique os campos.';
+
+        }
+
+        else if (erro.status === 409) {
+
+          this.mensagemErro =
+            'Já existe uma receita com esse nome.';
+
+        }
+
+        else {
+
+          this.mensagemErro =
+            'Erro ao cadastrar receita.';
+
+        }
+
+      }
+
+    });
 
     this.recipe.modoPreparo = this.modoPreparo
       .split('\n')

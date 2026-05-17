@@ -38,11 +38,21 @@
 
   <h2>Receitas em destaque</h2>
 
-  <div class="recipes-container">
+  <div
+    class="empty-state"
+    *ngIf="recipesFiltered.length === 0"
+  >
+    🍳 Nenhuma receita encontrada.
+  </div>
 
+  <div
+    class="recipes-container"
+    *ngIf="recipesFiltered.length > 0"
+  >
     <button
       class="recipe-card"
       *ngFor="let receita of recipesFiltered"
+      (click)="abrirDetalhes(receita.id!)"
     >
 
       <img

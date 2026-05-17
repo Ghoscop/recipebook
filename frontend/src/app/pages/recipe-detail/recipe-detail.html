@@ -1,1 +1,43 @@
-<p>recipe-detail works!</p>
+<section class="detail-section" *ngIf="recipe">
+
+  <a
+    href="/"
+    class="back-button"
+  >
+    ← Voltar
+  </a>
+
+  <img
+    [src]="recipe.imagemUrl"
+    [alt]="recipe.nome"
+    class="detail-image"
+  />
+
+  <div class="detail-card">
+
+    <h1>{{ recipe.nome }}</h1>
+
+    <p>📂 {{ recipe.categoria }}</p>
+    <p>⏱ {{ recipe.tempoPreparo }} min</p>
+    <p>🍽 {{ recipe.porcoes }} porções</p>
+    <p>📅 {{ recipe.dataCadastro | date:'dd/MM/yyyy' }}</p>
+
+    <h2>Ingredientes</h2>
+
+    <ul>
+      <li *ngFor="let ingrediente of recipe.ingredientes">
+        {{ ingrediente }}
+      </li>
+    </ul>
+
+    <h2>Modo de preparo</h2>
+
+    <ol>
+      <li *ngFor="let passo of recipe.modoPreparo">
+        {{ passo }}
+      </li>
+    </ol>
+
+  </div>
+
+</section>
