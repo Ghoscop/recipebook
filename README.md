@@ -1,59 +1,66 @@
-# RecipebookFrontend
+# RecipeBook
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.10.
+Sistema web de receitas desenvolvido com Angular e Spring Boot.
 
-## Development server
+O projeto permite cadastrar, visualizar, buscar e excluir receitas de forma prática e moderna.
 
-To start a local development server, run:
+---
+
+# Funcionalidades
+
+## RF01 — Listagem de receitas
+- Exibição em cards modernos
+- Imagem da receita
+- Tempo de preparo
+- Quantidade de porções
+
+## RF02 — Busca de receitas
+- Busca em tempo real
+- Normalização de texto
+- Suporte a acentos
+
+## RF03 — Cadastro de receitas
+- Formulário completo
+- Validação de campos
+- Preview de imagem
+- Integração com backend
+
+## RF04 — Detalhes da receita
+- Visualização completa
+- Ingredientes
+- Modo de preparo
+- Data de cadastro
+
+## RF05 — Exclusão de receitas
+- Exclusão individual
+- Exclusão múltipla
+- Atualização automática da tela
+
+---
+
+# 🛠 Tecnologias Utilizadas
+
+## Frontend
+- Angular 21
+- TypeScript
+- HTML5
+- CSS3
+
+## Backend
+- Spring Boot
+- Java 21
+- Spring Data JPA
+- Hibernate
+
+## Banco de Dados
+- H2 Database
+
+---
+
+# 🚀 Como executar o projeto
+
+## Backend
 
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+cd backend
+mvn spring-boot:run
