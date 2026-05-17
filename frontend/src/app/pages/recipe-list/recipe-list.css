@@ -76,7 +76,34 @@ body {
   gap: 1.5rem;
 }
 
+.delete-selected-button {
+  border: none;
+  background: #8b0000;
+  color: antiquewhite;
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delete-selected-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select-checkbox {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 2;
+}
+
 .recipe-card {
+  position: relative;
+
   border: none;
 
   background: antiquewhite;
@@ -265,4 +292,57 @@ body {
   margin: 2rem auto;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+
+  flex-wrap: wrap;
+}
+
+.new-recipe-button,
+.delete-selected-button {
+  border: none;
+
+  padding: 1rem 1.5rem;
+
+  border-radius: 14px;
+
+  font-size: 1rem;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.new-recipe-button {
+  background: antiquewhite;
+  color: #3b2f2f;
+}
+
+.delete-selected-button {
+  background: #8b0000;
+  color: antiquewhite;
+}
+
+.delete-selected-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.new-recipe-button:hover,
+.delete-selected-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }

@@ -26,13 +26,25 @@
 </div>
 
 <div class="actions">
+
   <a
     routerLink="/nova-receita"
-    class="link-button"
+    class="new-recipe-button"
   >
     + Nova Receita
   </a>
+
+  <button
+    class="delete-selected-button"
+    type="button"
+    (click)="excluirSelecionadas()"
+    [disabled]="receitasSelecionadas.length === 0"
+  >
+    🗑 Excluir selecionadas
+  </button>
+
 </div>
+
 
 <section class="recipes-section">
 
@@ -54,6 +66,13 @@
       *ngFor="let receita of recipesFiltered"
       (click)="abrirDetalhes(receita.id!)"
     >
+      <input
+        type="checkbox"
+        class="select-checkbox"
+        [checked]="receitasSelecionadas.includes(receita.id!)"
+        (click)="$event.stopPropagation()"
+        (change)="alternarSelecao(receita.id!)"
+      />
 
       <img
         [src]="receita.imagemUrl"

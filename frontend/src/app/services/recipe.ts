@@ -23,4 +23,8 @@ export class RecipeService {
   detalhesPorId(id: number): Observable<Recipe> {
     return this.http.get<Recipe>(`${this.api}/${id}`);
   }
+
+  deletar(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.api}/${id}`);
+  }
 }

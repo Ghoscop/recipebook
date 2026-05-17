@@ -47,4 +47,44 @@ export class RecipeList implements OnInit {
       .toLowerCase()
       .trim();
   }
+
+  receitasSelecionadas: number[] = [];
+
+  alternarSelecao(id: number): void {
+    if (this.receitasSelecionadas.includes(id)) {
+      this.receitasSelecionadas = this.receitasSelecionadas.filter((item) => item !== id);
+    } else {
+      this.receitasSelecionadas.push(id);
+    }
+  }
+
+  excluirSelecionadas(): void {
+    if (this.receitasSelecionadas.length === 0) {
+      return;
+    }
+
+    const confirmar = confirm('Deseja excluir as receitas selecionadas?');
+
+    if (!confirmar) {
+      return;
+    }
+
+    let concluidas = 0;
+    const total = this.receitasSelecionadas.length;
+
+    this.receitasSelecionadas.forEach((id) => {
+      this.recipeService.deletar(id).subscribe({
+        next: () => {
+          concluidas++;
+
+          if (concluidas === total) {
+            window.location.reload();
+          }
+        },
+        error: (erro) => {
+          console.error(erro);
+        },
+      });
+    });
+  }
 }
