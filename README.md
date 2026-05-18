@@ -43,8 +43,8 @@ O projeto permite cadastrar, visualizar, buscar e excluir receitas de forma prá
 ## Frontend
 - Angular 21
 - TypeScript
-- HTML5
-- CSS3
+- HTML
+- CSS
 
 ## Backend
 - Spring Boot
